@@ -1,5 +1,7 @@
 import os
 
+from exceptions import DirectoryExistsError
+
 
 class PackageCreator:
     """
@@ -35,16 +37,21 @@ class PackageCreator:
         """
         Creates the package structure
         """
-        self._main_package_structure()
-        self._tests_directory()
-        self._make_config_files()
+        try:
+            self._main_package_structure()
+            self._tests_directory()
+            self._make_config_files()
+        except DirectoryExistsError as dir_error:
+            print(f'An error has occurred: {dir_error}')
 
     def _create_dir(self, dir_name):
         structure = os.path.join(self.path, self._package_name,
                                  dir_name)
         if not os.path.exists(structure):
             os.makedirs(structure)
-        self._create_init_file(structure)
+            self._create_init_file(structure)
+        else:
+            raise DirectoryExistsError('The directory already exists')
 
     def _create_file(self, filename):
         path_to_file = os.path.join(self.path, self._package_name)
