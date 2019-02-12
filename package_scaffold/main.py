@@ -1,5 +1,5 @@
 import click
-import package_creator
+from . import package_creator
 
 
 @click.command()
