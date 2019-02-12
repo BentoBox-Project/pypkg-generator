@@ -1,6 +1,6 @@
 import os
 
-from .exceptions import DirectoryExistsError
+from .exceptions import DirectoryExistsError, ForgottenNameError
 
 
 class PackageCreator:
@@ -28,7 +28,7 @@ class PackageCreator:
             Contains the info to create the package
             according to needs of the user.
         """
-        self._package_name = args.get('name', 'forgotten_name')
+        self._package_name = args.get('name', '')
         self.path = args.get('path', '')
         self.tests = args.get('tests', True)
         self._init_files(args)
@@ -38,11 +38,14 @@ class PackageCreator:
         Creates the package structure
         """
         try:
+            self._name_is_empty()
             self._main_package_structure()
             self._tests_directory()
             self._make_config_files()
         except DirectoryExistsError as dir_error:
             print(f'An error has occurred: {dir_error}')
+        except ForgottenNameError as name_error:
+            print(f'An error has occurred: {name_error}')
 
     def _create_dir(self, dir_name):
         structure = os.path.join(self.path, self._package_name,
@@ -77,6 +80,10 @@ class PackageCreator:
 
     def _main_package_structure(self):
         self._create_dir(self.package_name)
+
+    def _name_is_empty(self):
+        if not self.package_name:
+            raise ForgottenNameError('The name is empty!')
 
     def _tests_directory(self):
         self._create_dir('tests')

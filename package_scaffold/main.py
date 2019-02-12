@@ -3,7 +3,7 @@ from . import package_creator
 
 
 @click.command()
-@click.option('--name', '-n', default='forgotten_name',
+@click.option('--name', '-n', default='',
               help='The name of the package')
 @click.option('--path', '-p', default='',
               help='The path where the package will be created')
