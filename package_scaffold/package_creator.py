@@ -1,6 +1,6 @@
 import os
 
-from exceptions import DirectoryExistsError
+from .exceptions import DirectoryExistsError
 
 
 class PackageCreator:

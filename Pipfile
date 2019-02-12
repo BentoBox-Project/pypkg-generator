@@ -8,6 +8,7 @@ pytest = "==4.2.0"
 
 [packages]
 click = "==7.0"
+testfixtures = "==6.5.0"
 
 [requires]
 python_version = "3.6"
