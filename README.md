@@ -33,18 +33,10 @@ And it'll display:
 
 ```sh
 Options:
-  -n, --name TEXT            The name of the package
-  -p, --path TEXT            The path where the package will be created
-  --readme / --no-readme     Create the README file or not, created by default
-  --req / --no-req           Create requirements.txt or not, created by
-                             default
-  --pipfile / --no-pipfile   Create the pipfile or not, created by default
-  --tests / --no-tests       Create test suite directory or not, created by
-                             default
-  --license / --not-license  Create the license file or not, created by
-                             default
-  --setup / --no-setup       Create setup.py file or not, created by default
-  --help                     Show this message and exit.
+  -n, --name TEXT       The name of the package
+  -p, --path TEXT       The path where the package will be created
+  --tests / --no-tests  Create test suite directory or not, created by default
+  --help                Show this message and exit.
 ```
 There are many options for customization, you can decide what file will be created or not.
 
@@ -72,17 +64,17 @@ $ pipenv shell
 $ pip3 install -e .
 ```
 
-To run the test-suite, inside the hexa_ftp directory:
+To run the test-suite, inside the package-scaffold directory:
 
 ```shell
-$ pytest -v test/
+$ pytest -vv test/
 ```
 
 ## Meta
 
-Daniel Omar Vergara Pérez – [@dan1_net](https://twitter.com/dan1_net) – daniel@hexagondata.io
+Daniel Omar Vergara Pérez – [@dan1_net](https://twitter.com/dan1_net) – daniel.omar.vergara@gmail.com
 
-[https://gitlab.com/dani_net](https://gitlab.com/dani_net)
+[https://github.com/dany2691](https://github.com/dany2691)
 
 ## Contributing
 

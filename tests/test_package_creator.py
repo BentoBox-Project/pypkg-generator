@@ -28,7 +28,7 @@ def tests_no_name_error(dir):
     with pytest.raises(exceptions.ForgottenNameError) as e:
         args = {'name': '', 'path': dir.path}
         pkg_creator = package_creator.PackageCreator(args)
-        pkg_creator._name_is_empty()
+        pkg_creator._is_name_empty()
     assert str(e.value) == 'The name is empty!'
 
 
