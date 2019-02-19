@@ -14,7 +14,7 @@ setup(
     url='https://github.com/dany2691/package-scaffold',
     packages=find_packages(),
     install_requires=[
-        'click==7.0.0'
+        'click>=7.0.0'
     ],
     license='MIT',
     classifiers=[
