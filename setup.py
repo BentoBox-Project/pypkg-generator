@@ -4,14 +4,14 @@ with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(
-    name='package',
+    name='pypkg-generator',
     version='0.3.0',
     description='Creates a new python package from basic template',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Daniel Omar Vergara Pérez',
     author_email='daniel.omar.vergara@gmail.com',
-    url='https://github.com/dany2691/package-scaffold',
+    url='https://github.com/dany2691/pypkg-generator',
     packages=find_packages(),
     install_requires=[
         'click>=7.0.0'
@@ -29,7 +29,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'package-scaffold=package_scaffold.main:main'
+            'pkg-generator=pypkg_generator.main:main'
         ]
     }
 )

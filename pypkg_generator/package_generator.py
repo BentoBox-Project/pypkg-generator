@@ -13,7 +13,7 @@ from .config import README, SETUP, LICENSE, REQUIREMENTS, PIPFILE
 from .config import CODE_OF_CONDUCT, GITIGNORE, INIT_FILE, TESTS_DIR
 
 
-class PackageCreator:
+class PackageGenerator:
     """
     A class used to create the basic package structure
     ...

@@ -16,7 +16,7 @@ This file contains the following functions:
 import click
 from colored import fg, attr
 
-from . import package_creator
+from . import package_generator
 
 
 @click.command()
@@ -45,7 +45,7 @@ def main(name, path, tests):
     args = {'name': name, 'path': path, 'tests': tests,
             'license': license_file, 'code_of_conduct': conduct_file,
             'pipfile': pipfile}
-    creator = package_creator.PackageCreator(args)
+    creator = package_generator.PackageGenerator(args)
     creator.call()
 
 
