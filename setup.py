@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name='pypkg-generator',
-    version='0.4.0',
+    version='0.4.1',
     description='Creates a new python package from basic template',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -14,7 +14,8 @@ setup(
     url='https://github.com/dany2691/pypkg-generator',
     packages=find_packages(exclude=("tests",)),
     install_requires=[
-        'click>=7.0.0'
+        'click>=7.0.0',
+        'colored>=1.3.93'
     ],
     license='MIT',
     classifiers=[
