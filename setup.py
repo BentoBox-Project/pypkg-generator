@@ -5,14 +5,14 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name='pypkg-generator',
-    version='0.3.0',
+    version='0.4.0',
     description='Creates a new python package from basic template',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Daniel Omar Vergara Pérez',
     author_email='daniel.omar.vergara@gmail.com',
     url='https://github.com/dany2691/pypkg-generator',
-    packages=find_packages(),
+    packages=find_packages(exclude=("tests",)),
     install_requires=[
         'click>=7.0.0'
     ],
@@ -29,7 +29,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'pkg-generator=pypkg_generator.main:main'
+            'pkg-generator=pypkg_generator.__main__:main'
         ]
     }
 )

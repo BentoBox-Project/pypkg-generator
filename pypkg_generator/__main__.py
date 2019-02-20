@@ -16,7 +16,7 @@ This file contains the following functions:
 import click
 from colored import fg, attr
 
-from . import package_generator
+from pypkg_generator import package_generator
 
 
 @click.command()
@@ -62,6 +62,7 @@ def license_option():
 def pipfile_option():
     """Returns the pipfile file option"""
     return f'{fg(2)} Do you want to include a Pipfile file? {attr(0)}'
+
 
 if __name__ == '__main__':
     main()
