@@ -1,6 +1,8 @@
 # Pypkg Generator
 > Create a simple template of a python package.
 
+[![PyPI version](https://badge.fury.io/py/pypkg-generator.svg)](https://badge.fury.io/py/pypkg-generator)
+
 Create a basic template of python package with a simple command line tool.
 
 ## Installation

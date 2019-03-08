@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf-8') as fh:
 
 setup(
     name='pypkg-generator',
-    version='0.4.1',
+    version='0.4.2',
     description='Creates a new python package from basic template',
     long_description=long_description,
     long_description_content_type="text/markdown",
