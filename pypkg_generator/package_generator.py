@@ -78,7 +78,7 @@ class PackageGenerator:
     def _create_file(self, filename):
         path_to_file = os.path.join(self.path, self._package_name)
         if os.path.isdir(path_to_file):
-            os.mknod(os.path.join(path_to_file, filename))
+            open(os.path.join(path_to_file, filename), 'w').close()
 
     def _create_default_files(self):
         self._create_file(SETUP)
@@ -87,7 +87,7 @@ class PackageGenerator:
         self._create_file(GITIGNORE)
 
     def _create_init_file(self, structure):
-        os.mknod(os.path.join(structure, INIT_FILE))
+        open(os.path.join(structure, INIT_FILE), 'w').close()
 
     def _defaults(self, args):
         self.pipfile = args.get('pipfile', True)
