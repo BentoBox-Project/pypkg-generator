@@ -1,9 +1,11 @@
 # Pypkg Generator
-> Create a simple template of a python package.
 
 [![PyPI version](https://badge.fury.io/py/pypkg-generator.svg)](https://badge.fury.io/py/pypkg-generator)
+[![CircleCI](https://circleci.com/gh/dany2691/pypkg-generator.svg?style=svg)](https://circleci.com/gh/dany2691/pypkg-generator)
 
-Create a basic template of python package with a simple command line tool.
+> Creates a simple template of a python package.
+
+Creates a basic template of python package with a simple command line tool.
 
 ## Installation
 
@@ -80,7 +82,7 @@ Daniel Omar Vergara Pérez – [@dan1_net](https://twitter.com/dan1_net) – dan
 
 ## Contributing
 
-1. Fork it (<https://gitlab.com/hexagondata_projects/pypkg-generator>)
+1. Fork it (<https://github.com/dany2691/pypkg-generator>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
