@@ -8,7 +8,6 @@ This file contains the following functions:
 
     * conduct_option - Returns the conduct file option
     * license_option - Returns the license file option
-    * pipfile_option - Returns the pipfile file option
     * main - the main function of the script
 
 """
@@ -41,10 +40,8 @@ def main(name, path, tests):
     """
     license_file = click.confirm(license_option())
     conduct_file = click.confirm(conduct_option())
-    pipfile = click.confirm(pipfile_option())
     args = {'name': name, 'path': path, 'tests': tests,
-            'license': license_file, 'code_of_conduct': conduct_file,
-            'pipfile': pipfile}
+            'license': license_file, 'code_of_conduct': conduct_file}
     creator = package_generator.PackageGenerator(args)
     creator.call()
 
@@ -57,11 +54,6 @@ def conduct_option():
 def license_option():
     """Returns the license file option"""
     return f'{fg(2)} Do you want to include a license file? {attr(0)}'
-
-
-def pipfile_option():
-    """Returns the pipfile file option"""
-    return f'{fg(2)} Do you want to include a Pipfile file? {attr(0)}'
 
 
 if __name__ == '__main__':
