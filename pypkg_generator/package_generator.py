@@ -9,7 +9,7 @@ import os
 from colored import fg, attr
 
 from .exceptions import DirectoryExistsError, ForgottenNameError
-from .config import README, SETUP, LICENSE, REQUIREMENTS, PIPFILE
+from .config import README, SETUP, LICENSE, REQUIREMENTS
 from .config import CODE_OF_CONDUCT, GITIGNORE, INIT_FILE, TESTS_DIR
 
 
@@ -59,16 +59,13 @@ class PackageGenerator:
             print(f'{fg(1)} An error has occurred: {attr(0)} {name_error}')
 
     def _create_custom_files(self):
-        if self.pipfile:
-            self._create_file(PIPFILE)
         if self.code_of_conduct:
             self._create_file(CODE_OF_CONDUCT)
         if self.license:
             self._create_file(LICENSE)
 
     def _create_dir(self, dir_name):
-        structure = os.path.join(self.path, self._package_name,
-                                 dir_name)
+        structure = os.path.join(self.path, self._package_name, dir_name)
         if not os.path.exists(structure):
             os.makedirs(structure)
             self._create_init_file(structure)
@@ -90,7 +87,6 @@ class PackageGenerator:
         open(os.path.join(structure, INIT_FILE), 'w').close()
 
     def _defaults(self, args):
-        self.pipfile = args.get('pipfile', True)
         self.license = args.get('license', True)
         self.code_of_conduct = args.get('code_of_conduct', True)
 
