@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 from setuptools.command.install import install
 import sys
 
-VERSION = '0.4.3'
+VERSION = '0.5.0'
 
 with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
@@ -14,7 +14,7 @@ class VerifyVersionCommand(install):
     description = 'verify that the git tag matches our version'
 
     def run(self):
-        tag = env .get('PYPKG_TAG')
+        tag = env.get('PYPKG_TAG')
         if tag != VERSION:
             info = f"Git tag: {tag} doesn't match with this version: {VERSION}"
             sys.exit(info)
