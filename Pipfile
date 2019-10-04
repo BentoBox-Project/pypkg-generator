@@ -6,12 +6,12 @@ verify_ssl = true
 [dev-packages]
 pytest = "*"
 testfixtures = "*"
+flake8 = "*"
+pytest-cov = "*"
 
 [packages]
 click = "*"
 colored = "*"
-flake8 = "*"
-pytest-cov = "*"
 
 [requires]
 python_version = "3.7"
