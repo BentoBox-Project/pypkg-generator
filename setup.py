@@ -1,11 +1,28 @@
+from os import environ as env
 from setuptools import find_packages, setup
+from setuptools.command.install import install
+import sys
+
+VERSION = '0.4.3'
 
 with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
+
+class VerifyVersionCommand(install):
+    """Custom command to verify that the git tag matches our version"""
+    description = 'verify that the git tag matches our version'
+
+    def run(self):
+        tag = env .get('PYPKG_TAG')
+        if tag != VERSION:
+            info = f"Git tag: {tag} doesn't match with this version: {VERSION}"
+            sys.exit(info)
+
+
 setup(
     name='pypkg-generator',
-    version='0.4.3',
+    version=VERSION,
     description='Creates a new python package from basic template',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -32,5 +49,6 @@ setup(
         'console_scripts': [
             'pkg-generator=pypkg_generator.__main__:main'
         ]
-    }
+    },
+    cmdclass={"verify": VerifyVersionCommand}
 )
