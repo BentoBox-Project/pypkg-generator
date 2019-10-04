@@ -3,7 +3,6 @@ Constants of the project.
 """
 
 LICENSE = 'LICENSE'
-PIPFILE = 'Pipfile'
 CODE_OF_CONDUCT = 'CODE_OF_CONDUCT.md'
 README = 'README.md'
 SETUP = 'setup.py'
